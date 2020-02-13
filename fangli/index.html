@@ -44,7 +44,7 @@
 
 <body>
     <div class="content">
-        <h2>方莉，我们已经认识:</h2>
+        <h2>小方莉，我们已经认识:</h2>
         <div class="timer">
             <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
         </div>
@@ -52,7 +52,8 @@
 
     <script>
         function timer() {
-            var start = new Date(2019, 12, 1); //
+	    //new Date('May 1,2019,0:0:0'); // (这个为字符串写法，数字形式是：new Date( 2018,4,1,0,0,0 )，注意就是月份数字是从0开始的，因此写月份要减1)
+            var start = new Date(2019, 11, 1); //
             var t = new Date() - start;
             var h = ~~(t / 1000 / 60 / 60 % 24);
             if (h < 10) {
