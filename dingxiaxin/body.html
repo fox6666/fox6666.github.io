@@ -25,7 +25,7 @@
         .content {
             position: absolute;
             width: 100%;
-            top: 40%;
+            top: 48%;
             transform: translate(0, -50%);
             text-align: center;
         }
@@ -44,16 +44,22 @@
 
 <body>
     <div class="content">
-        <h2>小方莉，我们已经认识:</h2>
+        <h2>丁夏欣，好喜欢你啊!</h2>
+        <h2>我们已经认识:</h2>
         <div class="timer">
             <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+        </div>
+        <h2>已经在一起:</h2>
+        <div class="timer">
+            <b id="together_d"></b> Days <b id="together_h"></b> Hours <b id="together_m"></b> Minutes <b id="together_s"></b> Seconds
         </div>
     </div>
 
     <script>
         function timer() {
 	    //new Date('May 1,2019,0:0:0'); // (这个为字符串写法，数字形式是：new Date( 2018,4,1,0,0,0 )，注意就是月份数字是从0开始的，因此写月份要减1)
-            var start = new Date(2019, 11, 1); //
+            var start = new Date(2019, 9, 9); //
+            var together_start = new Date(2020,2,21);
             var t = new Date() - start;
             var h = ~~(t / 1000 / 60 / 60 % 24);
             if (h < 10) {
@@ -72,6 +78,26 @@
             document.getElementById('h').innerHTML = h;
             document.getElementById('m').innerHTML = m;
             document.getElementById('s').innerHTML = s;
+
+            //第二个计时器
+            var t2 = new Date() - together_start;
+            var together_d = ~~(t2 / 1000 / 60 /60 / 24);
+            var together_h = ~~(t2 / 1000 / 60 /60 % 24);
+            if(together_h < 10){
+                together_h = "0" + together_h;
+            }
+            var together_m = ~~(t2 / 1000 / 60 % 60);
+            if(together_m < 10){
+                together_m = "0" + together_m;
+            }
+            var together_s = ~~(t2 / 1000 % 60);
+            if(together_s < 10){
+                together_s = "0" + together_s;
+            }
+            document.getElementById('together_d').innerHTML = together_d;
+            document.getElementById('together_h').innerHTML = together_h;
+            document.getElementById('together_m').innerHTML = together_m;
+            document.getElementById('together_s').innerHTML = together_s;
         }
         timer();
         setInterval(timer, 1000);

@@ -1,0 +1,40 @@
+<!--
+<html>
+<script>
+function check(){
+    var name=document.getElementById("name").value;
+    var pass=document.getElementById("pass").value;
+    if(name=="cdssxxx" && pass=="2372535103")
+    {
+        alert("登入成功");
+        window.document.f.action="./body.html";
+        window.document.f.submit();
+    }
+    else{
+        alert("你不是对的人");
+    }
+</script>
+</html>
+--!>
+<html> 
+    <head>
+        <title>test</title> 
+        <script language="JavaScript">
+            var password="";
+            password=prompt('你是哪位啊，不是每个人都可以看的:','');
+            if (password != '2020.3.21')   
+            {
+                alert("你不是对的人");  
+                window.opener=null; 
+                window.close();
+            }  // 密码不正确就关闭
+            else{
+                //window.open("./body.html"); 
+                //alert("登入成功");
+                window.location.href="./body.html";
+                //window.document.f.action="./body.html";
+                //window.document.f.submit();
+            }
+        </script>
+    </head> 
+</html>
